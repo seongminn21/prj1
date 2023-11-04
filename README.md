@@ -64,8 +64,6 @@ Enter your choice [ 1-9 ]
 + 출력 양식
   + 'movie id' 'movie title'
 ```
-사용자에게 'action' 장르의 영화 데이터를 가져오고 싶은지 여부를 물어보고, 그 결과를 choice 변수에 저장한다. 만약 choice가 'y'일 경우, awk 명령어를 사용하여 'u.item' 파일을 '|' 기준으로 읽어와서, 'action' 장르에 해당하는 행을 필터링하고 그 결과를 영화 ID와 제목으로 출력한다.
-
 Enter your choice [ 1-9 ] 2
 Do you want to get the data of ‘action’ genre movies 
 from 'u.item’?(y/n):y
@@ -81,6 +79,7 @@ from 'u.item’?(y/n):y
 33 Desperado (1995)
 Enter your choice [ 1-9 ] 
 ```
+사용자에게 'action' 장르의 영화 데이터를 가져오고 싶은지 여부를 물어보고, 그 결과를 choice 변수에 저장한다. 만약 choice가 'y'일 경우, awk 명령어를 사용하여 'u.item' 파일을 '|' 기준으로 읽어와서, 'action' 장르에 해당하는 행을 필터링하고 그 결과를 영화 ID와 제목으로 출력한다.
 
 ## 3. 'u.data'에서 특정 'movie id'로 식별된 영화의 평균 'rating' 가져오기
 + 'movie id'(1~1682) 입력
