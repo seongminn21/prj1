@@ -20,3 +20,13 @@
 movie id | movie title | release date | video release date |IMDb URL |Genre…
 unknown | Action | Adventure | Animation | Children's | Comedy | Crime | Documentary | Drama | Fantasy | Film-Noir | Horror | Musical | Mystery | Romance | Sci-Fi | Thriller | War | Western
 ```
+
+## 입력 파일 (u.data, u.user)
++ u.data 100000 rows
+```
+user id | movie id | rating | timestamp
+```
++ u.user 943 rows
+```
+user id | age | gender | occupation | zip cod
+```
