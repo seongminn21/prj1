@@ -55,6 +55,7 @@ Please enter 'movie id'(1~1682):1
 1|Toy Story (1995)|01-Jan-1995||http://us.imdb.com/M/title-exact?Toy%20Story%20(1995)|0|0|0|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0
 Enter your choice [ 1-9 ]
 ```
+사용자로부터 'movie id'를 입력받아 movie_id 변수에 저장한다. 그 후 awk 명령어를 사용하여 'u.item' 파일을 '|' 기준으로 읽어와서, 'movie id'가 입력받은 movie_id와 일치하는 행을 필터링하고 출력한다.
 
 ## 2. 'u.item'에서 'action' 장르 영화 데이터 가져오기
 + 'u.item'에서 'action' 장르 영화의 데이터를 가져오시겠습니까? (y/n)
@@ -63,6 +64,8 @@ Enter your choice [ 1-9 ]
 + 출력 양식
   + 'movie id' 'movie title'
 ```
+사용자에게 'action' 장르의 영화 데이터를 가져오고 싶은지 여부를 물어보고, 그 결과를 choice 변수에 저장한다. 만약 choice가 'y'일 경우, awk 명령어를 사용하여 'u.item' 파일을 '|' 기준으로 읽어와서, 'action' 장르에 해당하는 행을 필터링하고 그 결과를 영화 ID와 제목으로 출력한다.
+
 Enter your choice [ 1-9 ] 2
 Do you want to get the data of ‘action’ genre movies 
 from 'u.item’?(y/n):y
@@ -92,6 +95,7 @@ Enter your choice [ 1-9 ] 3
 Please enter the 'movie id’(1~1682):1
 average rating of 1: 3.87832
 ```
+사용자로부터 'movie id'를 입력받아 movie_id 변수에 저장한다. 그 후 awk 명령어를 사용하여 'u.data' 파일을 탭('\t') 기준으로 읽어와서, 'movie id'가 입력받은 movie_id와 일치하는 행을 필터링하고 그 결과를 기반으로 해당 영화의 평균 평점을 계산하고 출력한다.
 
 ## 4. 'u.item'에서 'IMDb URL' 삭제하기
 + 'u.item'에서 'IMDb URL'을 삭제하시겠습니까? (y/n)
@@ -111,6 +115,7 @@ Do you want to delete the ‘IMDb URL’ from ‘u.item’?(y/n):y
 9|Dead Man Walking (1995)|01-Jan-1995|||0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0
 10|Richard III (1995)|22-Jan-1996|||0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|1|0
 ```
+사용자에게 'u.item' 파일에서 'IMDb URL'을 제거하고 싶은지 여부를 물어보고, 그 결과를 choice 변수에 저장한다. 만약 choice가 'y'일 경우, 'u.item' 파일의 맨 위 10개 행을 가져와서 sed 명령어를 사용하여 'IMDb URL'을 제거한 결과를 출력한다.
 
 ## 5. 'u.user'에서 사용자에 대한 데이터 가져오기
 + 'u.user'에서 사용자에 대한 데이터를 가져오시겠습니까? (y/n)
@@ -133,6 +138,7 @@ user 8 is 36 years old male administrator
 user 9 is 29 years old male student
 user 10 is 53 years old male lawyer
 ```
+사용자에게 'u.user' 파일에서 사용자 데이터를 가져오고 싶은지 여부를 물어보고, 그 결과를 choice 변수에 저장한다. 만약 choice가 'y'일 경우, 'u.user' 파일을 '|' 기준으로 읽어와서 각 사용자의 정보를 출력한다.
 
 ## 6. 'u.item'에서 'release date' 형식 수정하기
 + 'u.item'의 'release data' 형식을 수정하시겠습니까? (y/n)
@@ -153,6 +159,7 @@ Do you want to Modify the format of ‘release data’ in ‘u.item’?(y/n):y
 1681|You So Crazy (1994)|19940101||http://us.imdb.com/M/title-exact?You%20So%20Crazy%20(1994)|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0
 1682|Scream of Stone (Schrei aus Stein) (1991)|19960308||http://us.imdb.com/M/titleexact?Schrei%20aus%20Stein%20(1991)|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0
 ```
+사용자에게 'u.item' 파일에서 'release date'의 형식을 변경하고 싶은지 여부를 물어보고, 그 결과를 choice 변수에 저장한다. 만약 choice가 'y'일 경우, 'u.item' 파일을 '|' 기준으로 읽어와서 'release date'의 형식을 변경하고 마지막 10개 행을 출력한다.
 
 ## 7. 'u.data'에서 특정 'user id'가 평가한 영화의 데이터 가져오기
 + 'user id'(1~943) 입력
@@ -182,6 +189,7 @@ Please enter the ‘user id’(1~943):12
 96|Terminator 2: Judgment Day (1991)
 97|Dances with Wolves (1990)
 ```
+사용자로부터 'user id'를 입력받아 user_id 변수에 저장한다. grep 명령어를 사용하여 'u.data' 파일에서 해당 'user id'가 평가한 영화 ID를 추출하고, cut 명령어를 사용하여 영화 ID를 정렬한다. 정렬된 결과를 '|'로 구분하여 출력하고, 영화 ID를 이용하여 해당 영화의 정보를 'u.item' 파일에서 찾아와 출력한다.
 
 ## 8. 20세에서 29세 사이의 'age'와 'occupation'이 'programmer'인 사용자가 평가한 영화의 평균 'rating' 가져오기
 + 20세에서 29세 사이의 'age'와 'occupation'이 'programmer'인 사용자가 평가한 영화의 평균 'rating'을 얻으시겠습니까? (y/n)
@@ -219,6 +227,7 @@ movies rated by users with 'age' between 20 and
 1621 1
 1655 2
 ```
+사용자에게 20~29세이며 '프로그래머' 직업을 가진 사용자가 평가한 영화의 평균 평점을 계산하고 싶은지 여부를 물어보고, 그 결과를 choice 변수에 저장한다. 만약 choice가 'y'일 경우, awk 명령어를 사용하여 'u.user' 파일을 읽어와서 조건에 맞는 사용자 ID를 추출한다. 이후 grep 명령어를 사용하여 해당 사용자들이 평가한 영화 데이터를 추출하고, awk 명령어를 사용하여 영화별 평균 평점을 계산하고 출력한다.
 
 ## 9. 나가기
 + 옵션 9를 선택할 때까지 메뉴 선택 계속 반복
