@@ -11,7 +11,7 @@
   + 'u.item'에서 'release date' 형식 수정하기
   + 'u.data'에서 특정 'user id'가 평가한 영화의 데이터 가져오기
   + 20세에서 29세 사이의 'age'와 'occupation'이 'programmer'인 사용자가 평가한 영화의 평균 'rating' 가져오기
-  + 나가기
+  + 프로그램 종료하기
 
 ## 입력 파일 (u.item)
 + 영화의 장르는 1로 표시
